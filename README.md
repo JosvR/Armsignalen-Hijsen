@@ -1,10 +1,10 @@
 # VCH · Hijsseinen oefenen
-Versie V01.00.00. Individuele oefenapp voor de klassikale training Veilig hijsen in de haven.
+Versie V01.01.00. Individuele oefenapp voor de klassikale training Veilig hijsen in de haven.
 
 ## Starten
 Open `dist/index.html` in een browser. Kies de vier kernseinen (hijsen, vieren, gevaar – noodstop en stop beweging) of alle twaalf seinen. Bij iedere foto staat een beschrijving van de beweging. Kies uit vijf antwoorden. Na een fout oefen je hetzelfde sein opnieuw. Alleen een goed antwoord brengt de container hoger. Aan het einde kun je de seinen die extra oefening vroegen herhalen.
 
-De seinenkaart bevat per sein een fotorealistische illustratie, de officiële tekening en de beschrijving. Je kunt vanuit een oefenronde de kaart bekijken en via Oefenen teruggaan. De voortgang geldt voor de geopende ronde en vervalt bij vernieuwen of afsluiten.
+De seinenkaart bevat per sein een fotorealistische illustratie, de officiële tekening en de beschrijving. Je kunt vanuit een oefenronde de kaart bekijken en via Oefenen teruggaan. Bij de zes bewegende seinen tonen gele pijlen de beweging en doorschijnende armen en handen een andere stand. In de oefening en bij het openen van een sein loopt een lichtpunt twee keer langs de pijl. De voortgang geldt voor de geopende ronde en vervalt bij vernieuwen of afsluiten.
 
 ## In het lokaal
 Open de gepubliceerde app. Kies rechtsboven **QR-code** en daarna **Vergroot QR-code**. Deelnemers die de code scannen openen ieder hun eigen oefenronde. De QR-code wordt in de browser gemaakt voor het huidige webadres.
