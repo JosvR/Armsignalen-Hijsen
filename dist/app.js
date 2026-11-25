@@ -43,7 +43,7 @@ function nav(where) {
 }
 
 function cards(items) {
-  return items.map(s => '<button class="card'+(core.includes(s)?' core':'')+'" data-detail="'+s.id+'"><img src="./assets/'+s.id+'.webp" alt=""><strong>'+s.name+'</strong></button>').join("");
+  return items.map(s => '<button class="card'+(core.includes(s)?' core':'')+'" data-detail="'+s.id+'">'+signalPhoto(s.id, "")+'<strong>'+s.name+'</strong></button>').join("");
 }
 
 function home() {
@@ -66,7 +66,7 @@ function showModal(title, html) {
 
 function showDetail(id) {
   const s = byId.get(id);
-  showModal(s.name, '<div class="detailimages"><img src="./assets/'+id+'.webp" alt="Foto van de seingever"><img src="./assets/schema-'+id+'.webp" alt="Tekening van het sein uit de richtlijn"></div><p>'+s.description+'</p>');
+  showModal(s.name, '<div class="detailimages">'+signalPhoto(id, "Foto van de seingever")+'<img src="./assets/schema-'+id+'.webp" alt="Tekening van het sein uit de richtlijn"></div><p>'+s.description+'</p>'+(signalMovements[id] ? '<p class="movement-note">De pijlen tonen de bewegingsrichting. De doorschijnende armen en handen tonen een andere stand van hetzelfde gebaar.</p>' : ""));
 }
 
 function lift(done,total) {
@@ -96,7 +96,7 @@ function question() {
   nav("game");
   const {ids,index,options,done}=round;
   const signal=byId.get(ids[index]);
-  main.innerHTML='<div class="gamehead"><p>Sein '+(index+1)+' van '+ids.length+'</p><button class="textbtn" data-action="exit">Ronde afsluiten</button></div><div class="game"><section class="panel"><div class="questionbar"><h1 tabindex="-1">Welk sein zie je?</h1></div><figure class="picture"><img class="signalimg" src="./assets/'+signal.id+'.webp" alt="Seingever op de kade. De houding en beweging staan onder de foto."><figcaption><strong>Let op de beweging.</strong> '+signal.description+'</figcaption></figure>'+lift(done,ids.length)+'</section><section class="panel"><h2>Kies het juiste sein</h2><div class="answers">'+options.map((id,i)=>'<button class="answer" data-answer="'+id+'"><span>'+String.fromCharCode(65+i)+'</span>'+byId.get(id).name+'</button>').join("")+'</div><div id="feedback" aria-live="polite"></div></section></div>';
+  main.innerHTML='<div class="gamehead"><p>Sein '+(index+1)+' van '+ids.length+'</p><button class="textbtn" data-action="exit">Ronde afsluiten</button></div><div class="game"><section class="panel"><div class="questionbar"><h1 tabindex="-1">Welk sein zie je?</h1></div><figure class="picture">'+signalPhoto(signal.id, "Seingever op de kade. De houding en beweging staan onder de foto.")+'<figcaption><strong>Let op de beweging.</strong> '+signal.description+'</figcaption></figure>'+lift(done,ids.length)+'</section><section class="panel"><h2>Kies het juiste sein</h2><div class="answers">'+options.map((id,i)=>'<button class="answer" data-answer="'+id+'"><span>'+String.fromCharCode(65+i)+'</span>'+byId.get(id).name+'</button>').join("")+'</div><div id="feedback" aria-live="polite"></div></section></div>';
   if(round.picked!==null) showFeedback(false);
 }
 
